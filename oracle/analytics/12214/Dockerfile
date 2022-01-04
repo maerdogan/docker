@@ -11,7 +11,6 @@ FROM docker.io/alpintosh/analytics:ol8
 
 #COPY scripts/* /u01/oracle/scripts/
 #WORKDIR /u01/oracle/scripts
-CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 #RUN  ["/u01/oracle/oracle_common/common/bin/wlst.sh","/u01/oracle/scripts/create_domain.py"]
 #CMD  ["/usr/bin/mkdir -p ",$SEC_FILE_FOLDER]	
 #RUN  ["/usr/bin/chmod -R 755 ",$DOMAIN_HOME]
