@@ -9,9 +9,9 @@ RUN yum -y install wget
 
 USER ROOT
 
-RUN addgroup -S oracle
-RUN adduser -S -D -h /usr/app/src oracle oracle
-
+RUN addgroup oracle
+RUN usermod -a -G oracle oracle
+RUN usermod -g root oracle
 # Chown all the files to the app user.
 RUN chown -R oracle:oracle /u01
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
