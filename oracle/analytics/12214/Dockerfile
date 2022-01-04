@@ -8,8 +8,9 @@ ENV ORACLE_BASE=/u01/app/oracle														\
 	
 
 FROM docker.io/alpintosh/analytics:ol8
-WORKDIR /u01/oracle/scripts
+
 COPY scripts/* /u01/oracle/scripts/
+WORKDIR /u01/oracle/scripts
 
 #RUN  ["/u01/oracle/oracle_common/common/bin/wlst.sh","/u01/oracle/scripts/create_domain.py"]
 #CMD  ["/usr/bin/mkdir -p ",$SEC_FILE_FOLDER]	
