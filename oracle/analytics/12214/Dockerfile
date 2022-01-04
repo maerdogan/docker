@@ -8,6 +8,8 @@ ENV ORACLE_BASE=/u01/app/oracle														\
 	
 
 FROM docker.io/alpintosh/analytics:ol8
+USER ROOT
+
 
 #COPY scripts/* /u01/oracle/scripts/
 #WORKDIR /u01/oracle/scripts
