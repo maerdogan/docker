@@ -1,5 +1,4 @@
 FROM docker.io/redhat/ubi8-minimal
-USER root
 
 RUN microdnf install yum
 RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
