@@ -9,14 +9,14 @@ CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
 
 
-RUN addgroup -S oracle && adduser -S oracle -G oracle
+RUN /usr/sbin/addgroup -S oracle && /usr/sbin/adduser -S oracle -G oracle
 RUN chown -R oracle:oracle /home/oracle/
 RUN echo 'oracle  ALL=(ALL) /bin/su' >>  /etc/sudoers
 
 RUN echo '1010800000  ALL=(ALL) /bin/su' >>  /etc/sudoers
 
-RUN  groupadd --gid 1000 alp && \
-     adduser --uid 1000 --gid alp alp
+RUN /usr/sbin/groupadd --gid 1000 alp && \
+    /usr/sbin/adduser --uid 1000 --gid alp alp
      
 RUN mkdir -p /u01/app/analytics
 RUN mkdir -p /u01/setups
