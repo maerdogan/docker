@@ -7,16 +7,14 @@ RUN yum -y install unzip && yum -y clean all  && rm -rf /var/cache
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
 
-
-RUN addgroup -S oracle && adduser -S oracle -G oracle
-RUN chown -R oracle:oracle /home/oracle/
+RUN /usr/sbin/groupadd oracle && /usr/sbin/adduser -m -g oracle -d /u01 -s /bin/bash oracle
+RUN chown -R oracle:oracle /u01
 RUN echo 'oracle  ALL=(ALL) /bin/su' >>  /etc/sudoers
 
 
 RUN mkdir -p /u01/setups
 RUN yum -y install wget
 
-RUN chmod -R 755 oracle:oracle /u01/
 #COPY analytics/setups/* /u01/setups/
 #WORKDIR /u01/setups
 USER oracle
