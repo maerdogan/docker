@@ -5,7 +5,6 @@ RUN microdnf install yum
 RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
 RUN yum -y install unzip && yum -y clean all  && rm -rf /var/cache
 
-CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
 
 
@@ -23,6 +22,7 @@ RUN mkdir -p /u01/setups
 RUN chown -R oracle:oracle /u01/app/analytics
 RUN chown -R oracle:oracle /u01/setups
 
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
 USER oracle
 
