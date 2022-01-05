@@ -4,13 +4,13 @@ RUN microdnf install yum
 RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
 RUN yum -y install unzip && yum -y clean all  && rm -rf /var/cache
 
-RUN echo 'root123' | passwd --stdin root 
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
+
+
 
 RUN addgroup -S oracle && adduser -S oracle -G oracle
 RUN chown -R oracle:oracle /home/oracle/
 RUN echo 'oracle  ALL=(ALL) /bin/su' >>  /etc/sudoers
-
-RUN echo 'oracle123' | passwd --stdin oracle 
 
 
 RUN mkdir -p /u01/setups
