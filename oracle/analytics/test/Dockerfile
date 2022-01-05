@@ -17,8 +17,8 @@ RUN yum -y install wget
 
 RUN echo '1010800000  ALL=(ALL) /bin/su' >>  /etc/sudoers
 
-RUN groupadd --gid 1000 alp && \
-    adduser --uid 1000 --gid alp alp
+RUN groupadd --gid 5858585858 alp && \
+    adduser --uid 5858585858 --gid alp alp
      
 RUN mkdir -p /u01/app/analytics
 RUN mkdir -p /u01/setups
