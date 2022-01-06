@@ -10,7 +10,7 @@ RUN /usr/sbin/groupadd oracle && /usr/sbin/adduser -m -g oracle -d /u01 -s /bin/
 RUN chown -R oracle:oracle /u01
 
 RUN echo 'oracle  ALL=(ALL) /bin/su' >>  /etc/sudoers
-
+RUN echo "oracle" | passwd --stdin oracle
 
 RUN yum -y install wget
 
