@@ -1,10 +1,9 @@
-FROM docker.io/redhat/ubi8-minimal
+FROM docker.io/redhat/ubi8
 
 RUN microdnf install yum
 RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
 RUN yum -y install unzip && yum -y clean all  && rm -rf /var/cache
-RUN yum -y visudo && yum -y clean all  && rm -rf /var/cache
-RUN yum -y install find && yum -y clean all  && rm -rf /var/cache
+
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
 RUN /usr/sbin/groupadd oracle && /usr/sbin/adduser -m -g oracle -d /u01 -s /bin/bash oracle
