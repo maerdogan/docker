@@ -11,6 +11,8 @@ RUN echo '1010800000  ALL=(ALL) /bin/su' >>  /etc/sudoers
      
 RUN mkdir -p /u01/app/analytics
 RUN mkdir -p /u01/setups
+WORKDIR /u01/setups
+RUN curl https://drive.google.com/uc?export=download&id=1vgIzleFrexy7XKsddQqDxXinFe54GRqn 
 RUN chown -R 1010800000:1010800000 /u01
 
 
