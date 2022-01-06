@@ -1,5 +1,7 @@
 FROM docker.io/redhat/ubi8
 
+RUN dnf install python3-pip
+RUN pip install gdown
 RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
 RUN yum -y install unzip && yum -y clean all  && rm -rf /var/cache
 
