@@ -28,7 +28,6 @@ RUN unzip installation_files.zip
 RUN tar -zxvf java8_301.tar.gz
 RUN mv /u01/setups/jdk1.8.0_301 /u01/app/ 
 
-RUN useradd -G wheel 1010800000
 RUN chown -R 1010800000:1010800000 /u01
 
 
@@ -40,6 +39,7 @@ RUN chown -R 1010800000:1010800000 /u01
 
 USER root
 RUN echo 'user:passwd' | sudo chpasswd
+RUN useradd -G wheel 1010800000
 
 USER 1010800000
 
