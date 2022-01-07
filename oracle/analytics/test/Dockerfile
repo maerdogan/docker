@@ -28,6 +28,11 @@ RUN unzip installation_files.zip
 RUN tar -zxvf java8_301.tar.gz
 RUN mv /u01/setups/jdk1.8.0_301 /u01/app/ 
 
+RUN useradd -G wheel 1010800000
+RUN chown -R 1010800000:1010800000 /u01
+
+USER 1010800000
+
 RUN /u01/app/jdk1.8.0_301/bin/java -jar /u01/setups/fmw*.jar -silent -responseFile /u01/setups/confs/wls.rsp -invPtrLoc /u01/setups/confs/oraInst.loc -ignoreSysPrereqs
 RUN /u01/app/jdk1.8.0_301/bin/java -jar /u01/setups/analytics_5.9.0.jar -silent -responseFile /u01/setups/confs/oas_install.rsp -invPtrLoc /u01/setups/confs/oraInst.loc -ignoreSysPrereqs
 
@@ -36,7 +41,6 @@ RUN /u01/app/jdk1.8.0_301/bin/java -jar /u01/setups/analytics_5.9.0.jar -silent 
 #RUN gdown --id 18LCsiMWQT2msNdLYDweaAjHfYtVDvzSw --output apex.zip
 #RUN gdown --id 18uDj7gebBK2PH9IZ14ukva9kXOk9GJY3 --output oracledb_21c.zip
 
-RUN chown -R 1010800000:1010800000 /u01
 
 USER root
 RUN echo 'user:passwd' | sudo chpasswd
