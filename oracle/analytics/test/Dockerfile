@@ -38,7 +38,7 @@ RUN chown -R 1010800000:1010800000 /u01
 
 
 USER root
-RUN echo 'user:passwd' | sudo chpasswd
+RUN echo 'user:passwd' | passwd
 RUN useradd -G wheel 1010800000
 
 USER 1010800000
