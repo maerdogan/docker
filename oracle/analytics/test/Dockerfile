@@ -37,9 +37,6 @@ RUN chown -R 1010800000:1010800000 /u01
 #RUN gdown --id 18uDj7gebBK2PH9IZ14ukva9kXOk9GJY3 --output oracledb_21c.zip
 
 
-USER root
-
-USER 1010800000
 
 CMD /u01/app/jdk1.8.0_301/bin/java -jar /u01/setups/fmw*.jar -silent -responseFile /u01/setups/confs/wls.rsp -invPtrLoc /u01/setups/confs/oraInst.loc -ignoreSysPrereqs
 CMD /u01/app/jdk1.8.0_301/bin/java -jar /u01/setups/analytics_5.9.0.jar -silent -responseFile /u01/setups/confs/oas_install.rsp -invPtrLoc /u01/setups/confs/oraInst.loc -ignoreSysPrereqs
