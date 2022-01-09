@@ -8,7 +8,7 @@ RUN yum -y install unzip && yum -y clean all  && rm -rf /var/cache
 
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
-RUN yum -y install wget
+RUN yum -y install wget && yum -y clean all  && rm -rf /var/cache
 
 RUN echo '1010800000  ALL=(ALL) /bin/su' >>  /etc/sudoers
      
