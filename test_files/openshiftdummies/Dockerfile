@@ -1,5 +1,13 @@
 FROM docker.io/redhat/ubi8-micro
+RUN yum -y install telnet && yum -y clean all  && rm -rf /var/cache
+RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
+RUN dnf -y install python3  && yum -y clean all  && rm -rf /var/cache
+
+RUN yum -y install mlocate  && yum -y clean all  && rm -rf /var/cache
+
+RUN pip3 install gdown
 RUN mkdir /u01
+
 WORKDIR /u01
 RUN curl --silent --remote-name $(dnf config-manager --dump image-to-include | awk '/baseurl =/{print $3}')
 RUN chmod 0444 /u01/*
