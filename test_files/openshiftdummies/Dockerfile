@@ -1,4 +1,4 @@
-FROM docker.io/redhat/ubi8-micro
+FROM jboss-eap73-runtime-openshift:7.3
 RUN yum -y install telnet && yum -y clean all  && rm -rf /var/cache
 RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
 RUN dnf -y install python3  && yum -y clean all  && rm -rf /var/cache
