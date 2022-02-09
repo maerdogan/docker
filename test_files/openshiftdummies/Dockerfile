@@ -1,12 +1,12 @@
-FROM ubi8 AS builder
-RUN mkdir /disk
-WORKDIR /disk
+FROM docker.io/redhat/ubi8-micro
+RUN mkdir /u01
+WORKDIR /u01
 RUN curl --silent --remote-name $(dnf config-manager --dump image-to-include | awk '/baseurl =/{print $3}')
-RUN chmod 0444 /disk/*
-RUN chown 107:107 /disk/*
+RUN chmod 0444 /u01/*
+RUN chown 107:107 /u01/*
 
 FROM scratch
-COPY --from=builder /disk/* /disk/
+COPY --from=builder /u01/* /u01/
 LABEL com.redhat.component="rhel-guest-image-container" \
       com.redhat.source_code="https://access.redhat.com/downloads/content/479/ver=/rhel---8/x86_64/product-sources" \
       name="container-native-virtualization/rhel-guest-image-container" \
