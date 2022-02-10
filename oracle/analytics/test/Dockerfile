@@ -1,10 +1,12 @@
 FROM docker.io/redhat/ubi8
 
-RUN dnf -y install python3
+#RUN dnf -y install python3
 #RUN python -m pip 
-RUN pip3 install gdown
-RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
+#RUN pip3 install gdown
 
-CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
+RUN yum -y install telnet && yum -y clean all  && rm -rf /var/cache
+#RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
+
 
 RUN yum -y install wget && yum -y clean all  && rm -rf /var/cache
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
