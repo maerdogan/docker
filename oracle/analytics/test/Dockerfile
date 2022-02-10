@@ -1,4 +1,4 @@
-FROM docker.io/redhat/ubi8
+FROM docker.io/redhat/ubi8/ubi-minimal
 
 #RUN dnf -y install python3
 #RUN python -m pip 
