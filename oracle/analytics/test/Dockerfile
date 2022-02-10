@@ -4,7 +4,7 @@ FROM docker.io/redhat/ubi8/ubi-minimal
 #RUN python -m pip 
 #RUN pip3 install gdown
 
-RUN yum -y install telnet && yum -y clean all  && rm -rf /var/cache
+RUN yum install telnet telnet-server -y && yum -y clean all  && rm -rf /var/cache
 #RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
 
 
