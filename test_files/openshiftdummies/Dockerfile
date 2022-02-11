@@ -1,1 +1,1 @@
-FROM alpine
+FROM alpintosh/alpine:telnet
