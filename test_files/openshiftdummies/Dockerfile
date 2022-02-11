@@ -1,3 +1,3 @@
 FROM alpintosh/alpine:telnet
 
-CMD ["/bin/sleep", "infinite"]
+CMD ["tail -f /dev/null"]
