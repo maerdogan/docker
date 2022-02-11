@@ -1,4 +1,3 @@
-FROM debian:stretch
-RUN apt-get -y update && apt-get -y install telnet
-ENTRYPOINT ["/usr/bin/telnet"]
-CMD []
+FROM docker.io/realworld/telnet
+
+CMD exec /bin/bash  "trap : TERM INT; sleep infinity & wait"
