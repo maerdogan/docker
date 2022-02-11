@@ -1,1 +1,1 @@
-FROM docker.io/alpine
+FROM docker.io/alpintosh/alpine:telnet
