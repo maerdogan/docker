@@ -1,4 +1,4 @@
-FROM docker.io/alpine:latest
+FROM docker.io/alpine
 
 RUN apk update && apk add busybox-extras
 
