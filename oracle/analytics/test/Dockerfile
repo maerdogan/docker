@@ -5,7 +5,7 @@ FROM docker.io/redhat/ubi8
 #RUN pip3 install gdown
 
 RUN yum update -y && yum -y clean all  && rm -rf /var/cache
-RUN yum install telnet -y  && yum -y clean all  && rm -rf /var/cache
+RUN yum -y install telnet foo --skip-broken && yum -y clean all  && rm -rf /var/cache
 RUN yum -y install zip && yum -y clean all  && rm -rf /var/cache
 
 
