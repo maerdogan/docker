@@ -1,3 +1,4 @@
-FROM alpintosh/alpine:telnet
+FROM docker.io/alpintosh/alpine:telnet
 
-CMD ["tail -f /dev/null"]
+
+CMD ["sh", "-c", "tail -f /dev/null"]
