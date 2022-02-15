@@ -1,3 +1,3 @@
 FROM alpintosh/ubuntu:v1 
 
-CMD bash
+CMD tail -f /dev/null
