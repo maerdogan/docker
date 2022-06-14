@@ -1,3 +1,3 @@
-FROM alpintosh/ubuntu:v3
+FROM alpintosh/ubuntu:v4
 
 CMD tail -f /dev/null
