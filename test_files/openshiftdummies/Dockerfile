@@ -1,4 +1,7 @@
 FROM alpintosh/ubuntu:v4
-USER root
+
+RUN groupadd -r user1 && useradd -r -g user1 root
+USER user1
+
 
 CMD tail -f /dev/null
