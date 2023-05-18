@@ -2,7 +2,4 @@ FROM alpintosh/ubuntu:latest
 
 USER root
 
-CMD tail -f /dev/null
-USER root
-
-
+RUN echo "10.10.10.10  alp.domain" >> /etc/hosts
