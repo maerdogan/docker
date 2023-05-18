@@ -5,4 +5,4 @@ USER root
 ENTRYPOINT ["/bin/sh", "-c" , "echo 10.10.10.10   alpdomain >> /etc/hosts " ]
 
 
-RUN tail -333f /dev/null
+CMD tail -333f /dev/null
