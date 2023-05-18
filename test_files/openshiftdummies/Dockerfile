@@ -1,4 +1,4 @@
-FROM alpintosh/alpine
+FROM alpintosh/ubuntu:latest
 
 USER root
 
